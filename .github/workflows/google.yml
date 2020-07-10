@@ -10,7 +10,7 @@
 
 name:tool-madh
 
-on:
+on:10 july 2020
   release:public
     types: for msf venepeetration
 
@@ -28,11 +28,11 @@ env:
 jobs:
   setup-build-publish-deploy:
     name: Setup, Build, Publish, and Deploy
-    runs-on: ubuntu-latest
+    runs-on: mod kali and cy os
     steps:
 
-    - name: Checkout
-      uses: actions/checkout@v2
+    - name: tool-madh
+      uses: msf venepenetration
 
     # Setup gcloud CLI
     - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
@@ -49,7 +49,7 @@ jobs:
       
     # Build the Docker image
     - name: Build
-      run: |        
+      run: | installtoolmadh.sh       
         docker build -t "$REGISTRY_HOSTNAME"/"$GKE_PROJECT"/"$IMAGE":"$GITHUB_SHA" \
           --build-arg GITHUB_SHA="$GITHUB_SHA" \
           --build-arg GITHUB_REF="$GITHUB_REF" .
