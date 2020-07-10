@@ -12,7 +12,7 @@ name:tool-madh
 
 on:10 july 2020
   release:public
-    types: for msf venepeetration
+    types: for msf venepeetration.
 
 # Environment variables available to all jobs and steps in this workflow
 env:
@@ -56,7 +56,7 @@ jobs:
 
     # Push the Docker image to Google Container Registry
     - name: Publish
-      run: |
+      run: |ssh.installreq.txt
         docker push $REGISTRY_HOSTNAME/$GKE_PROJECT/$IMAGE:$GITHUB_SHA
         
     # Set up kustomize
@@ -67,7 +67,7 @@ jobs:
 
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
-      run: |
+      run: |metaphoric.madh-tool
         gcloud container clusters get-credentials $GKE_CLUSTER --zone $GKE_ZONE --project $GKE_PROJECT
         ./kustomize edit set image $REGISTRY_HOSTNAME/$GKE_PROJECT/$IMAGE:${GITHUB_SHA}
         ./kustomize build . | kubectl apply -f -
