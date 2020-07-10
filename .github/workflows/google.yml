@@ -12,7 +12,7 @@ name:tool-madh
 
 on:10 july 2020
   release:public
-    types: for msf venepeetration.
+    types:venepenetration.
 
 # Environment variables available to all jobs and steps in this workflow
 env:
